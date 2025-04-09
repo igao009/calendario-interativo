@@ -2,6 +2,7 @@ function colorirDia(){
     //Pegar valor do campo de dia
     let days = document.getElementById('day').value;
 
+
     //Pegar o valor do campo cor
     let color = document.getElementById('color').value;
 
@@ -15,10 +16,10 @@ function colorirDia(){
         // Se o numero de dias está no intervalo
         //Aplicará a cor na célula do calendario
         let td = calendar.getElementsByTagName
-        ('td');
-        td.style.backgroundColor = color
+        ('td')[parseInt(days)+1];
+        td.style.backgroundColor = color;
     } else{
-        alert("Favor informa um dia do calendario")
+        alert("Favor informa um dia do calendario");
     }
     //Guardar a célular da tabela
     let elementos = document.querySelectorAll('td');
@@ -30,19 +31,21 @@ function colorirDia(){
     //Loop para verificar o estilo de cada celula e contar quantas tem cor e qual cor
     for(let i = 0; i < elementos.length; i++){
 
-        var estilo = .window.getComputedStyle(elementos[i]);
+        var estilo = window.getComputedStyle(elementos[i]);
 
         //Obttém a cor de fundo da célula
         var cor = estilo.backgroundColor;
 
         //Verifica a cor da célula e incrementa o contador
-        if(corEstilo == 'rgb(173, 216, 230' || corEstilo === 'ligthblue'){
+        if(corEstilo == 'rgb(173, 216, 230)' || corEstilo === 'ligthblue'){
             contadorAzul++;
         } else if(corEstilo == 'rgb(152, 215, 152)' || corEstilo === 'palegreen'){
             contadorVerde++;
         } else if(corEstilo == 'rgb(255, 182, 193)' || corEstilo === 'lightpink'){
             contadorRosa++;
-        }
-        
+        }else if(corEstilo++ ==  'rgb (106, 90, 205)' || corEstilo === 'slateblue'){
+            contadorRoxa++;
+        }   
 
+}
 }
